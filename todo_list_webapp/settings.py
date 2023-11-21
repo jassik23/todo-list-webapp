@@ -79,8 +79,12 @@ WSGI_APPLICATION = 'todo_list_webapp.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'todo',
+        'USER' : 'user1',
+        'PASSWORD' : 'user1',
+        'HOST' : 'pgsql',
+        'PORT' : 5432
     }
 }
 
