@@ -2,7 +2,7 @@ from rest_framework.fields import IntegerField, CharField
 from rest_framework.relations import PrimaryKeyRelatedField
 from rest_framework.serializers import ModelSerializer
 
-from tasks.models import Todo
+from tasks.models import Tasks
 from users.models import User
 
 
@@ -13,13 +13,13 @@ class TodoSerializer(ModelSerializer):
     description = CharField(allow_null=True, required=False)
 
     class Meta:
-        model = Todo
+        model = Tasks
         fields = [
             'id',
             'title',
             'description',
             'user',
-            'completed'
+            'is_completed'
         ]
 
 
@@ -28,10 +28,10 @@ class TodoShortSerializer(ModelSerializer):
     description = CharField(allow_null=True, required=False)
 
     class Meta:
-        model = Todo
+        model = Tasks
         fields = [
             'id',
             'title',
             'description',
-            'completed'
+            'is_completed'
         ]

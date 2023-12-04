@@ -3,6 +3,6 @@ from tasks.views.viewsets import TodoViewSet
 
 router = SimpleRouter()
 
-router.register('todos', TodoViewSet)
+router.register('tasks', TodoViewSet)
 
 urlpatterns = router.urls
