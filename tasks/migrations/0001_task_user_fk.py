@@ -9,18 +9,18 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('users', '0001_todo_user_fk'),
+        ('users', '0001_task_user_fk'),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Todo',
+            name='Task',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('title', models.CharField(max_length=255)),
                 ('description', models.TextField(null=True)),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='todos', to='users.user')),
-                ('completed', models.BooleanField(default=False))
+                ('user', models.ForeignKey(on_delete=django.db.models.deletion.PROTECT, related_name='tasks', to='users.user')),
+                ('is_completed', models.BooleanField(default=False))
             ],
         ),
     ]
